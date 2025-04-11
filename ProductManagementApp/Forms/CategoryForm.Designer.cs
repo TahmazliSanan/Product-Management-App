@@ -28,11 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dgvCategories = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productManagementDs = new ProductManagementApp.DataAccess.DataSets.ProductManagementDs();
             this.grbCategoryName = new System.Windows.Forms.GroupBox();
             this.txbCategoryName = new System.Windows.Forms.TextBox();
             this.btnAddCategory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productManagementDs)).BeginInit();
             this.grbCategoryName.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,18 +48,45 @@
             this.dgvCategories.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCategories.AutoGenerateColumns = false;
             this.dgvCategories.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategories.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn});
+            this.dgvCategories.DataSource = this.categoriesBindingSource;
             this.dgvCategories.Location = new System.Drawing.Point(2, 3);
             this.dgvCategories.Name = "dgvCategories";
-            this.dgvCategories.Size = new System.Drawing.Size(322, 406);
+            this.dgvCategories.Size = new System.Drawing.Size(243, 406);
             this.dgvCategories.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.productManagementDs;
+            // 
+            // productManagementDs
+            // 
+            this.productManagementDs.DataSetName = "ProductManagementDs";
+            this.productManagementDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grbCategoryName
             // 
             this.grbCategoryName.Controls.Add(this.txbCategoryName);
             this.grbCategoryName.Location = new System.Drawing.Point(2, 415);
             this.grbCategoryName.Name = "grbCategoryName";
-            this.grbCategoryName.Size = new System.Drawing.Size(322, 53);
+            this.grbCategoryName.Size = new System.Drawing.Size(243, 53);
             this.grbCategoryName.TabIndex = 1;
             this.grbCategoryName.TabStop = false;
             this.grbCategoryName.Text = "Name";
@@ -63,12 +97,12 @@
             this.txbCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCategoryName.Location = new System.Drawing.Point(3, 16);
             this.txbCategoryName.Name = "txbCategoryName";
-            this.txbCategoryName.Size = new System.Drawing.Size(316, 29);
+            this.txbCategoryName.Size = new System.Drawing.Size(237, 29);
             this.txbCategoryName.TabIndex = 0;
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Location = new System.Drawing.Point(211, 466);
+            this.btnAddCategory.Location = new System.Drawing.Point(132, 466);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(110, 38);
             this.btnAddCategory.TabIndex = 2;
@@ -79,7 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 507);
+            this.ClientSize = new System.Drawing.Size(246, 507);
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.grbCategoryName);
             this.Controls.Add(this.dgvCategories);
@@ -88,7 +122,10 @@
             this.Name = "CategoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Categories";
+            this.Load += new System.EventHandler(this.CategoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productManagementDs)).EndInit();
             this.grbCategoryName.ResumeLayout(false);
             this.grbCategoryName.PerformLayout();
             this.ResumeLayout(false);
@@ -101,5 +138,9 @@
         private System.Windows.Forms.GroupBox grbCategoryName;
         private System.Windows.Forms.TextBox txbCategoryName;
         private System.Windows.Forms.Button btnAddCategory;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource categoriesBindingSource;
+        private DataAccess.DataSets.ProductManagementDs productManagementDs;
     }
 }

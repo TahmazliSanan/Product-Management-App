@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ProductManagementApp.DataAccess.Helpers;
 using System.Windows.Forms;
 
 namespace ProductManagementApp.Forms
@@ -15,6 +8,11 @@ namespace ProductManagementApp.Forms
         public CategoryForm()
         {
             InitializeComponent();
+        }
+
+        private void CategoryForm_Load(object sender, System.EventArgs e)
+        {
+            productManagementDs.Categories.FillCategories();
         }
     }
 }
