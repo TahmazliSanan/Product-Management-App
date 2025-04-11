@@ -42,9 +42,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(276, 40);
+            this.dataGridView1.Location = new System.Drawing.Point(276, 27);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(555, 418);
+            this.dataGridView1.Size = new System.Drawing.Size(555, 434);
             this.dataGridView1.TabIndex = 0;
             // 
             // menuBar
@@ -70,6 +70,7 @@
             this.btnMenuCategory.Name = "btnMenuCategory";
             this.btnMenuCategory.Size = new System.Drawing.Size(180, 22);
             this.btnMenuCategory.Text = "Categories";
+            this.btnMenuCategory.Click += new System.EventHandler(this.btnMenuCategory_Click);
             // 
             // MainForm
             // 
@@ -82,6 +83,7 @@
             this.MainMenuStrip = this.menuBar;
             this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Product Management App";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuBar.ResumeLayout(false);
