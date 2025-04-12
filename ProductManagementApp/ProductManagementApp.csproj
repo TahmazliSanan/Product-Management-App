@@ -106,6 +106,7 @@
     </Compile>
     <Compile Include="DataAccess\Helpers\CategoryDal.cs" />
     <Compile Include="DataAccess\Helpers\GenericDal.cs" />
+    <Compile Include="Exceptions\InvalidCategoryNameException.cs" />
     <Compile Include="Forms\CategoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
