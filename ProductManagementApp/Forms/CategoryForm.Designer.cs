@@ -38,6 +38,7 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productManagementDs)).BeginInit();
             this.grbCategoryName.SuspendLayout();
@@ -60,7 +61,7 @@
             this.grbCategoryName.Controls.Add(this.txbCategoryName);
             this.grbCategoryName.Location = new System.Drawing.Point(2, 415);
             this.grbCategoryName.Name = "grbCategoryName";
-            this.grbCategoryName.Size = new System.Drawing.Size(314, 53);
+            this.grbCategoryName.Size = new System.Drawing.Size(314, 45);
             this.grbCategoryName.TabIndex = 1;
             this.grbCategoryName.TabStop = false;
             this.grbCategoryName.Text = "Name";
@@ -70,6 +71,8 @@
             this.txbCategoryName.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.txbCategoryName.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.categoriesBindingSource, "id", true));
+            this.txbCategoryName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "name", true));
             this.txbCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbCategoryName.Location = new System.Drawing.Point(22, 16);
             this.txbCategoryName.Name = "txbCategoryName";
@@ -78,12 +81,14 @@
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Location = new System.Drawing.Point(206, 466);
+            this.btnAddCategory.BackColor = System.Drawing.Color.Blue;
+            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.Location = new System.Drawing.Point(24, 466);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(110, 38);
             this.btnAddCategory.TabIndex = 2;
             this.btnAddCategory.Text = "Add";
-            this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.UseVisualStyleBackColor = false;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // dgvCategories
@@ -119,11 +124,24 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Green;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(156, 466);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(110, 38);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 507);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.grbCategoryName);
             this.Controls.Add(this.dgvCategories);
@@ -153,5 +171,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button btnEdit;
     }
 }

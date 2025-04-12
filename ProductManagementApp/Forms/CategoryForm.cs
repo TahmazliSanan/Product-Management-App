@@ -1,4 +1,5 @@
 ﻿using ProductManagementApp.AppCode.Extensions;
+using ProductManagementApp.DataAccess.DataSets;
 using ProductManagementApp.DataAccess.Helpers;
 using ProductManagementApp.Exceptions;
 using System.Windows.Forms;
@@ -30,6 +31,22 @@ namespace ProductManagementApp.Forms
             productManagementDs.Categories.AddCategory(txbCategoryName.Text);
             txbCategoryName.Clear();
             txbCategoryName.Focus();
+        }
+
+        private void btnEdit_Click(object sender, System.EventArgs e)
+        {
+            ProductManagementDs.CategoriesRow selectedRow = categoriesBindingSource
+                .GetSelectedRow<ProductManagementDs.CategoriesRow>();
+
+            if (selectedRow is null)
+            {
+                Extension.ShowError(new RowIsNotSelectedException().Message);
+                return;
+            }
+
+            txbCategoryName.Clear();
+            txbCategoryName.Focus();
+            productManagementDs.Categories.EditCategory(selectedRow.name, selectedRow.id);
         }
     }
 }
