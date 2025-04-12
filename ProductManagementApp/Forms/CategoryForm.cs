@@ -1,4 +1,5 @@
-﻿using ProductManagementApp.DataAccess.Helpers;
+﻿using ProductManagementApp.AppCode.Extensions;
+using ProductManagementApp.DataAccess.Helpers;
 using System.Windows.Forms;
 
 namespace ProductManagementApp.Forms
@@ -8,6 +9,7 @@ namespace ProductManagementApp.Forms
         public CategoryForm()
         {
             InitializeComponent();
+            dgvCategories.InitDefault();
         }
 
         private void CategoryForm_Load(object sender, System.EventArgs e)

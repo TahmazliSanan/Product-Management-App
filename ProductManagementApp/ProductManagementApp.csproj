@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppCode\Extensions\DataGridViewExtension.cs" />
     <Compile Include="DataAccess\DataSets\ProductManagementDs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
