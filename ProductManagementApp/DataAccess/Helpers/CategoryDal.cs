@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using ProductManagementApp.AppCode.Extensions;
+using System.Data;
 
 namespace ProductManagementApp.DataAccess.Helpers
 {
@@ -6,15 +7,8 @@ namespace ProductManagementApp.DataAccess.Helpers
     {
         public static void FillCategories(this DataTable table)
         {
-            using (IDbCommand command = Connection.CreateCommand())
+            using (IDbCommand command = Connection.CreateCommand("select id, name from categories;"))
             {
-                command.CommandText = "select id, name from categories";
-
-                if (command.Connection.State != ConnectionState.Open)
-                {
-                    command.Connection.Open();
-                }
-
                 IDataReader reader = command.ExecuteReader();
                 table.Load(reader);
             }
@@ -22,19 +16,22 @@ namespace ProductManagementApp.DataAccess.Helpers
 
         public static void AddCategory(this DataTable table, string categoryName)
         {
-            using (IDbCommand command = Connection.CreateCommand())
+            using (IDbCommand command = Connection
+                .CreateCommand("insert into categories (`name`) values (@name);")
+                .AddParameter("@name", categoryName))
             {
-                command.CommandText = "insert into categories (`name`) values (@name)";
+                command.ExecuteNonQuery();
+                table.FillCategories();
+            }
+        }
 
-                if (command.Connection.State != ConnectionState.Open)
-                {
-                    command.Connection.Open();
-                }
-
-                IDbDataParameter parameter = command.CreateParameter();
-                parameter.ParameterName = "@name";
-                parameter.Value = categoryName;
-                command.Parameters.Add(parameter);
+        public static void EditCategory(this DataTable table, string categoryName, int categoryId)
+        {
+            using (IDbCommand command = Connection
+                .CreateCommand("update categories set `name` = @name where id = @id;")
+                .AddParameter("@name", categoryName)
+                .AddParameter("@id", categoryId))
+            {
                 command.ExecuteNonQuery();
                 table.FillCategories();
             }
