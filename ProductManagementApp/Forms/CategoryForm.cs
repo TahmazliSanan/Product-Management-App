@@ -48,5 +48,25 @@ namespace ProductManagementApp.Forms
             txbCategoryName.Focus();
             productManagementDs.Categories.EditCategory(selectedRow.name, selectedRow.id);
         }
+
+        private void btnDelete_Click(object sender, System.EventArgs e)
+        {
+            ProductManagementDs.CategoriesRow selectedRow = categoriesBindingSource
+                .GetSelectedRow<ProductManagementDs.CategoriesRow>();
+
+            if (selectedRow is null)
+            {
+                Extension.ShowError(new RowIsNotSelectedException().Message);
+                return;
+            }
+            else if (Extension.ShowQuestion("Are you sure?") != DialogResult.OK)
+            {
+                return;
+            }
+
+            txbCategoryName.Clear();
+            txbCategoryName.Focus();
+            productManagementDs.Categories.DeleteCategory(selectedRow.id);
+        }
     }
 }

@@ -29,39 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productManagementDs = new ProductManagementApp.DataAccess.DataSets.ProductManagementDs();
             this.grbCategoryName = new System.Windows.Forms.GroupBox();
             this.txbCategoryName = new System.Windows.Forms.TextBox();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.dgvCategories = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnEdit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productManagementDs)).BeginInit();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.productManagementDs = new ProductManagementApp.DataAccess.DataSets.ProductManagementDs();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbCategoryName.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productManagementDs)).BeginInit();
             this.SuspendLayout();
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.productManagementDs;
-            // 
-            // productManagementDs
-            // 
-            this.productManagementDs.DataSetName = "ProductManagementDs";
-            this.productManagementDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grbCategoryName
             // 
             this.grbCategoryName.Controls.Add(this.txbCategoryName);
-            this.grbCategoryName.Location = new System.Drawing.Point(2, 415);
+            this.grbCategoryName.Location = new System.Drawing.Point(2, 402);
             this.grbCategoryName.Name = "grbCategoryName";
-            this.grbCategoryName.Size = new System.Drawing.Size(314, 45);
+            this.grbCategoryName.Size = new System.Drawing.Size(314, 58);
             this.grbCategoryName.TabIndex = 1;
             this.grbCategoryName.TabStop = false;
             this.grbCategoryName.Text = "Name";
@@ -74,7 +65,7 @@
             this.txbCategoryName.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.categoriesBindingSource, "id", true));
             this.txbCategoryName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriesBindingSource, "name", true));
             this.txbCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbCategoryName.Location = new System.Drawing.Point(22, 16);
+            this.txbCategoryName.Location = new System.Drawing.Point(28, 19);
             this.txbCategoryName.Name = "txbCategoryName";
             this.txbCategoryName.Size = new System.Drawing.Size(267, 29);
             this.txbCategoryName.TabIndex = 0;
@@ -83,9 +74,9 @@
             // 
             this.btnAddCategory.BackColor = System.Drawing.Color.Blue;
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.Location = new System.Drawing.Point(24, 466);
+            this.btnAddCategory.Location = new System.Drawing.Point(30, 466);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(110, 38);
+            this.btnAddCategory.Size = new System.Drawing.Size(80, 38);
             this.btnAddCategory.TabIndex = 2;
             this.btnAddCategory.Text = "Add";
             this.btnAddCategory.UseVisualStyleBackColor = false;
@@ -104,8 +95,46 @@
             this.dgvCategories.DataSource = this.categoriesBindingSource;
             this.dgvCategories.Location = new System.Drawing.Point(2, 3);
             this.dgvCategories.Name = "dgvCategories";
-            this.dgvCategories.Size = new System.Drawing.Size(325, 406);
+            this.dgvCategories.Size = new System.Drawing.Size(325, 393);
             this.dgvCategories.TabIndex = 0;
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.Green;
+            this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Location = new System.Drawing.Point(116, 466);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(80, 38);
+            this.btnEdit.TabIndex = 3;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(202, 466);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(80, 38);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "Categories";
+            this.categoriesBindingSource.DataSource = this.productManagementDs;
+            // 
+            // productManagementDs
+            // 
+            this.productManagementDs.DataSetName = "ProductManagementDs";
+            this.productManagementDs.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -120,27 +149,12 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // errorProvider
-            // 
-            this.errorProvider.ContainerControl = this;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Green;
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(156, 466);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(110, 38);
-            this.btnEdit.TabIndex = 3;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(328, 507);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddCategory);
             this.Controls.Add(this.grbCategoryName);
@@ -151,12 +165,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Categories";
             this.Load += new System.EventHandler(this.CategoryForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productManagementDs)).EndInit();
             this.grbCategoryName.ResumeLayout(false);
             this.grbCategoryName.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategories)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productManagementDs)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -168,9 +182,10 @@
         private System.Windows.Forms.BindingSource categoriesBindingSource;
         private DataAccess.DataSets.ProductManagementDs productManagementDs;
         private System.Windows.Forms.DataGridView dgvCategories;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
     }
 }
