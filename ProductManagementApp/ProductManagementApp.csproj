@@ -101,6 +101,9 @@
     <Compile Include="AppCode\Extensions\DataGridViewExtension.cs" />
     <Compile Include="AppCode\Extensions\DbExtension.cs" />
     <Compile Include="AppCode\Extensions\MessageBoxExtension.cs" />
+    <Compile Include="DataAccess\DataSets\ProductManagementDs.cs">
+      <DependentUpon>ProductManagementDs.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataAccess\DataSets\ProductManagementDs.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -108,6 +111,7 @@
     </Compile>
     <Compile Include="DataAccess\Helpers\CategoryDal.cs" />
     <Compile Include="DataAccess\Helpers\GenericDal.cs" />
+    <Compile Include="DataAccess\Helpers\ProductDal.cs" />
     <Compile Include="DataAccess\Helpers\UnitDal.cs" />
     <Compile Include="Exceptions\InvalidUnitNameException.cs" />
     <Compile Include="Exceptions\RowIsNotSelectedException.cs" />
