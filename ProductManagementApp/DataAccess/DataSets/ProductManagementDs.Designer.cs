@@ -1045,10 +1045,10 @@ namespace ProductManagementApp.DataAccess.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ProductsRow AddProductsRow(int id, string name, string stock_keeping_unit, decimal price, int category_id, string category_name, int unit_id, string unit_name) {
+            public ProductsRow AddProductsRow(string name, int stock_keeping_unit, decimal price, int category_id, string category_name, int unit_id, string unit_name) {
                 ProductsRow rowProductsRow = ((ProductsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id,
+                        null,
                         name,
                         stock_keeping_unit,
                         price,
@@ -1102,7 +1102,7 @@ namespace ProductManagementApp.DataAccess.DataSets {
                 base.Columns.Add(this.columnid);
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
-                this.columnstock_keeping_unit = new global::System.Data.DataColumn("stock_keeping_unit", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnstock_keeping_unit = new global::System.Data.DataColumn("stock_keeping_unit", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnstock_keeping_unit);
                 this.columnprice = new global::System.Data.DataColumn("price", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprice);
@@ -1116,9 +1116,11 @@ namespace ProductManagementApp.DataAccess.DataSets {
                 base.Columns.Add(this.columnunit_name);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
+                this.columnid.AutoIncrement = true;
                 this.columnid.AllowDBNull = false;
                 this.columnid.Unique = true;
                 this.columnname.AllowDBNull = false;
+                this.columnstock_keeping_unit.AllowDBNull = false;
                 this.columnprice.AllowDBNull = false;
                 this.columncategory_id.AllowDBNull = false;
                 this.columncategory_name.AllowDBNull = false;
@@ -1362,14 +1364,9 @@ namespace ProductManagementApp.DataAccess.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string stock_keeping_unit {
+            public int stock_keeping_unit {
                 get {
-                    try {
-                        return ((string)(this[this.tableProducts.stock_keeping_unitColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'stock_keeping_unit\' in table \'Products\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableProducts.stock_keeping_unitColumn]));
                 }
                 set {
                     this[this.tableProducts.stock_keeping_unitColumn] = value;
@@ -1429,18 +1426,6 @@ namespace ProductManagementApp.DataAccess.DataSets {
                 set {
                     this[this.tableProducts.unit_nameColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isstock_keeping_unitNull() {
-                return this.IsNull(this.tableProducts.stock_keeping_unitColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setstock_keeping_unitNull() {
-                this[this.tableProducts.stock_keeping_unitColumn] = global::System.Convert.DBNull;
             }
         }
         
