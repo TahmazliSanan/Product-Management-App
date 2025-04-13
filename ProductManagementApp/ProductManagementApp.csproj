@@ -108,6 +108,8 @@
     </Compile>
     <Compile Include="DataAccess\Helpers\CategoryDal.cs" />
     <Compile Include="DataAccess\Helpers\GenericDal.cs" />
+    <Compile Include="DataAccess\Helpers\UnitDal.cs" />
+    <Compile Include="Exceptions\InvalidUnitNameException.cs" />
     <Compile Include="Exceptions\RowIsNotSelectedException.cs" />
     <Compile Include="Exceptions\InvalidCategoryNameException.cs" />
     <Compile Include="Forms\CategoryForm.cs">

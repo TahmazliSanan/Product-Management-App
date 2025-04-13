@@ -49,7 +49,6 @@ namespace ProductManagementApp.AppCode.Extensions
                 }
             }
 
-
             dgv.MouseDown += delegate (object sender, MouseEventArgs e)
             {
                 if (dgv.Rows.Count > 0 && e.Button == MouseButtons.Right)
