@@ -1,7 +1,6 @@
 ﻿using ProductManagementApp.AppCode.Extensions;
 using ProductManagementApp.DataAccess.DataSets;
 using ProductManagementApp.DataAccess.Helpers;
-using ProductManagementApp.Exceptions;
 using System.Windows.Forms;
 
 namespace ProductManagementApp.Forms
@@ -23,8 +22,7 @@ namespace ProductManagementApp.Forms
         {
             if (string.IsNullOrEmpty(txbCategoryName.Text))
             {
-                errorProvider.SetError(txbCategoryName, 
-                    new InvalidCategoryNameException().Message);
+                errorProvider.SetError(txbCategoryName, "Invalid category name!");
                 return;
             }
 
@@ -39,7 +37,7 @@ namespace ProductManagementApp.Forms
 
             if (selectedRow is null)
             {
-                Extension.ShowError(new RowIsNotSelectedException().Message);
+                Extension.ShowError("Row is not selected!");
                 return;
             }
 
@@ -54,7 +52,7 @@ namespace ProductManagementApp.Forms
 
             if (selectedRow is null)
             {
-                Extension.ShowError(new RowIsNotSelectedException().Message);
+                Extension.ShowError("Row is not selected!");
                 return;
             }
             else if (Extension.ShowQuestion("Are you sure?") != DialogResult.OK)
