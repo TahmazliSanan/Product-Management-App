@@ -101,6 +101,7 @@
     <Compile Include="AppCode\Extensions\DataGridViewExtension.cs" />
     <Compile Include="AppCode\Extensions\DbExtension.cs" />
     <Compile Include="AppCode\Extensions\MessageBoxExtension.cs" />
+    <Compile Include="AppCode\Extensions\NumericUpDownExtension.cs" />
     <Compile Include="DataAccess\DataSets\ProductManagementDs.cs">
       <DependentUpon>ProductManagementDs.xsd</DependentUpon>
     </Compile>
