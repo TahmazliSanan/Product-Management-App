@@ -16,5 +16,11 @@ namespace ProductManagementApp
             CategoryForm categoryForm = new CategoryForm();
             categoryForm.Show(this);
         }
+
+        private void btnMenuUnits_Click(object sender, EventArgs e)
+        {
+            UnitForm unitForm = new UnitForm();
+            unitForm.Show(this);
+        }
     }
 }

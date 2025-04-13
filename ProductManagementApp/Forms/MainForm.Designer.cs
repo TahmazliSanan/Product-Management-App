@@ -32,6 +32,7 @@
             this.menuBar = new System.Windows.Forms.MenuStrip();
             this.btnMenuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.btnMenuCategory = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnMenuUnits = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuBar.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,8 @@
             // btnMenuFile
             // 
             this.btnMenuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnMenuCategory});
+            this.btnMenuCategory,
+            this.btnMenuUnits});
             this.btnMenuFile.Name = "btnMenuFile";
             this.btnMenuFile.Size = new System.Drawing.Size(37, 20);
             this.btnMenuFile.Text = "File";
@@ -71,6 +73,13 @@
             this.btnMenuCategory.Size = new System.Drawing.Size(180, 22);
             this.btnMenuCategory.Text = "Categories";
             this.btnMenuCategory.Click += new System.EventHandler(this.btnMenuCategory_Click);
+            // 
+            // btnMenuUnits
+            // 
+            this.btnMenuUnits.Name = "btnMenuUnits";
+            this.btnMenuUnits.Size = new System.Drawing.Size(180, 22);
+            this.btnMenuUnits.Text = "Units";
+            this.btnMenuUnits.Click += new System.EventHandler(this.btnMenuUnits_Click);
             // 
             // MainForm
             // 
@@ -99,6 +108,7 @@
         private System.Windows.Forms.MenuStrip menuBar;
         private System.Windows.Forms.ToolStripMenuItem btnMenuFile;
         private System.Windows.Forms.ToolStripMenuItem btnMenuCategory;
+        private System.Windows.Forms.ToolStripMenuItem btnMenuUnits;
     }
 }
 
