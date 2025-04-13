@@ -50,8 +50,7 @@ namespace ProductManagementApp.Forms
 
         private void btnDeleteCategory_Click(object sender, System.EventArgs e)
         {
-            ProductManagementDs.CategoriesRow selectedRow = categoriesBindingSource
-                .GetSelectedRow<ProductManagementDs.CategoriesRow>();
+            var selectedRow = categoriesBindingSource.GetSelectedRow<ProductManagementDs.CategoriesRow>();
 
             if (selectedRow is null)
             {
