@@ -33,7 +33,7 @@ namespace ProductManagementApp.Forms
             txbCategoryName.Focus();
         }
 
-        private void btnEdit_Click(object sender, System.EventArgs e)
+        private void btnEditCategory_Click(object sender, System.EventArgs e)
         {
             ProductManagementDs.CategoriesRow selectedRow = categoriesBindingSource
                 .GetSelectedRow<ProductManagementDs.CategoriesRow>();
@@ -49,7 +49,7 @@ namespace ProductManagementApp.Forms
             productManagementDs.Categories.EditCategory(selectedRow.name, selectedRow.id);
         }
 
-        private void btnDelete_Click(object sender, System.EventArgs e)
+        private void btnDeleteCategory_Click(object sender, System.EventArgs e)
         {
             ProductManagementDs.CategoriesRow selectedRow = categoriesBindingSource
                 .GetSelectedRow<ProductManagementDs.CategoriesRow>();
