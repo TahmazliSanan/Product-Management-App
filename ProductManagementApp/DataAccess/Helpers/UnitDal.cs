@@ -1,5 +1,7 @@
 ﻿using ProductManagementApp.AppCode.Extensions;
+using ProductManagementApp.DataAccess.DataSets;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ProductManagementApp.DataAccess.Helpers
 {
@@ -14,6 +16,15 @@ namespace ProductManagementApp.DataAccess.Helpers
                 table.Clear();
                 table.Load(reader);
             }
+        }
+
+        public static void FillUnitsToComboBox(this ComboBox box)
+        {
+            ProductManagementDs ds = new ProductManagementDs();
+            ds.Units.FillUnits();
+            box.DataSource = ds.Units;
+            box.DisplayMember = "name";
+            box.ValueMember = "id";
         }
 
         public static void AddUnit(this DataTable table, string unitName)

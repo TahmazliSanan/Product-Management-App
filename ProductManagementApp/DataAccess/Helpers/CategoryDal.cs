@@ -1,5 +1,7 @@
 ﻿using ProductManagementApp.AppCode.Extensions;
+using ProductManagementApp.DataAccess.DataSets;
 using System.Data;
+using System.Windows.Forms;
 
 namespace ProductManagementApp.DataAccess.Helpers
 {
@@ -14,6 +16,15 @@ namespace ProductManagementApp.DataAccess.Helpers
                 table.Clear();
                 table.Load(reader);
             }
+        }
+
+        public static void FillCategoriesToComboBox(this ComboBox box)
+        {
+            ProductManagementDs ds = new ProductManagementDs();
+            ds.Categories.FillCategories();
+            box.DataSource = ds.Categories;
+            box.DisplayMember = "name";
+            box.ValueMember = "id";
         }
 
         public static void AddCategory(this DataTable table, string categoryName)
