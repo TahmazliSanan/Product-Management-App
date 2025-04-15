@@ -29,6 +29,7 @@ namespace ProductManagementApp.Forms
             productManagementDs.Units.AddUnit(txbUnitName.Text);
             txbUnitName.Clear();
             txbUnitName.Focus();
+            MessageBox.Show(this, "Unit is added successfully!", "Add Unit");
         }
 
         private void btnEditUnit_Click(object sender, System.EventArgs e)
@@ -44,6 +45,7 @@ namespace ProductManagementApp.Forms
             txbUnitName.Clear();
             txbUnitName.Focus();
             productManagementDs.Units.EditUnit(selectedRow.name, selectedRow.id);
+            MessageBox.Show(this, "Unit is updated successfully!", "Edit Unit");
         }
 
         private void btnDeleteUnit_Click(object sender, System.EventArgs e)
@@ -63,6 +65,7 @@ namespace ProductManagementApp.Forms
             txbUnitName.Clear();
             txbUnitName.Focus();
             productManagementDs.Units.DeleteUnit(selectedRow.id);
+            MessageBox.Show(this, "Unit is deleted successfully!", "Delete Unit");
         }
     }
 }

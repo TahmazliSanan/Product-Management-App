@@ -29,6 +29,7 @@ namespace ProductManagementApp.Forms
             productManagementDs.Categories.AddCategory(txbCategoryName.Text);
             txbCategoryName.Clear();
             txbCategoryName.Focus();
+            MessageBox.Show(this, "Category is adeed successfully!", "Add Category");
         }
 
         private void btnEditCategory_Click(object sender, System.EventArgs e)
@@ -44,6 +45,7 @@ namespace ProductManagementApp.Forms
             txbCategoryName.Clear();
             txbCategoryName.Focus();
             productManagementDs.Categories.EditCategory(selectedRow.name, selectedRow.id);
+            MessageBox.Show(this, "Category is updated successfully!", "Edit Category");
         }
 
         private void btnDeleteCategory_Click(object sender, System.EventArgs e)
@@ -63,6 +65,7 @@ namespace ProductManagementApp.Forms
             txbCategoryName.Clear();
             txbCategoryName.Focus();
             productManagementDs.Categories.DeleteCategory(selectedRow.id);
+            MessageBox.Show(this, "Category is deleted successfully!", "Delete Category");
         }
     }
 }

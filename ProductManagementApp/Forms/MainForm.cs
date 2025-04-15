@@ -3,7 +3,6 @@ using ProductManagementApp.DataAccess.DataSets;
 using ProductManagementApp.DataAccess.Helpers;
 using ProductManagementApp.Forms;
 using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace ProductManagementApp
@@ -58,6 +57,7 @@ namespace ProductManagementApp
 
             productManagementDs.Products
                 .AddProduct(txbProductName.Text, Convert.ToInt32(nmrStockKeepingUnit.Value), nmrPrice.Value, cmbCategories.SelectedIndex + 1, cmbUnits.SelectedIndex + 1);
+            MessageBox.Show(this, "Product is added successfully!", "Add Product");
         }
 
         private void btnEditProduct_Click(object sender, EventArgs e)
@@ -72,6 +72,7 @@ namespace ProductManagementApp
 
             productManagementDs.Products
                 .EditProduct(txbProductName.Text, Convert.ToInt32(nmrStockKeepingUnit.Value), nmrPrice.Value, cmbCategories.SelectedIndex + 1, cmbUnits.SelectedIndex + 1, selectedRow.id);
+            MessageBox.Show(this, "Product is updated successfully!", "Edit Product");
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -98,6 +99,7 @@ namespace ProductManagementApp
             }
 
             productManagementDs.Products.DeleteProduct(selectedRow.id);
+            MessageBox.Show(this, "Product is deleted successfully!", "Delete Product");
         }
     }
 }
